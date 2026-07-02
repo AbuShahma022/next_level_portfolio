@@ -6,13 +6,12 @@ import {
   Card,
   CardContent,
 } from "@/components/ui/card";
+import Section from "../shared/section";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="py-24 lg:py-32"
-    >
+    <Section id="about">
+      
       <Container>
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           {/* Left Side */}
@@ -28,7 +27,7 @@ export default function About() {
                 My programming journey started with HTML, CSS, and JavaScript.
                 As I explored web development further, I became passionate
                 about creating complete full-stack applications using React,
-                Next.js, Node.js, Express.js, Prisma, MongoDB, and PostgreSQL.
+                Next.js, Node.js, Express.js, Prisma, MongoDB, PostgreSQL and ai integration with langchain.
               </p>
 
               <p>
@@ -68,6 +67,6 @@ export default function About() {
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }
