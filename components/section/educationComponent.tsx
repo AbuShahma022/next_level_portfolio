@@ -5,6 +5,8 @@ import SectionHeading from "@/components/shared/section-heading";
 import { education } from "@/data/education";
 
 import { Card } from "@/components/ui/card";
+import MotionWrapper from "../shared/motion-wraper";
+import { fadeUp } from "@/lib/motion";
 
 export default function Education() {
   return (
@@ -45,6 +47,7 @@ export default function Education() {
                   </div>
 
                   {/* Card */}
+                  <MotionWrapper variants={fadeUp}>
                   <Card className="flex-1 rounded-3xl border-border/50 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                       <h3 className="text-2xl font-bold">
@@ -64,6 +67,7 @@ export default function Education() {
                       {item.description}
                     </p>
                   </Card>
+                  </MotionWrapper>
                 </div>
               );
             })}

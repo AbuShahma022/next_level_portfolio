@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 import Container from "@/components/shared/container";
 import Section from "@/components/shared/section";
@@ -13,13 +15,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-import { toast } from "sonner";
+import {
+  fadeLeft,
+  fadeRight,
+  staggerContainer,
+} from "@/lib/motion";
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    toast.info("Contact form integration coming soon.");
+    toast.info("Contact form integration coming soon. send me text in linkedin or email me ");
   };
 
   return (
@@ -34,70 +40,85 @@ export default function Contact() {
 
         <div className="mt-20 grid gap-10 lg:grid-cols-2">
           {/* Contact Info */}
-          <div className="space-y-6">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="space-y-6"
+          >
             {contactInfo.map((item) => {
               const Icon = item.icon;
 
               return (
-                <Card
+                <motion.div
                   key={item.title}
-                  className="transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+                  variants={fadeLeft}
                 >
-                  <CardContent className="flex items-center gap-5 p-6">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                      <Icon className="h-6 w-6" />
-                    </div>
+                  <Card className="transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+                    <CardContent className="flex items-center gap-5 p-6">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                        <Icon className="h-6 w-6" />
+                      </div>
 
-                    <div>
-                      <p className="text-sm text-muted-foreground">
-                        {item.title}
-                      </p>
+                      <div>
+                        <p className="text-sm text-muted-foreground">
+                          {item.title}
+                        </p>
 
-                      <Link
-                        href={item.href}
-                        target="_blank"
-                        className="font-medium hover:text-primary"
-                      >
-                        {item.value}
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
+                        <Link
+                          href={item.href}
+                          target="_blank"
+                          className="font-medium transition-colors hover:text-primary"
+                        >
+                          {item.value}
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* Contact Form */}
-          <Card>
-            <CardContent className="p-8">
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-5"
-              >
-                <Input placeholder="Your Name" />
-
-                <Input
-                  type="email"
-                  placeholder="Email Address"
-                />
-
-                <Input placeholder="Subject" />
-
-                <Textarea
-                  rows={6}
-                  placeholder="Write your message..."
-                />
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full"
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Card>
+              <CardContent className="p-8">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
                 >
-                  Send Message
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                  <Input placeholder="Your Name" />
+
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                  />
+
+                  <Input placeholder="Subject" />
+
+                  <Textarea
+                    rows={6}
+                    placeholder="Write your message..."
+                  />
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full"
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </Container>
     </Section>

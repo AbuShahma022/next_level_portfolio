@@ -7,6 +7,8 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import Section from "../shared/section";
+import MotionWrapper from "../shared/motion-wraper";
+import { fadeLeft, fadeRight } from "@/lib/motion";
 
 export default function About() {
   return (
@@ -15,6 +17,7 @@ export default function About() {
       <Container>
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           {/* Left Side */}
+          <MotionWrapper variants={fadeLeft}>
           <div>
             <SectionHeading
               badge="About Me"
@@ -37,8 +40,9 @@ export default function About() {
               </p>
             </div>
           </div>
-
+          </MotionWrapper>
           {/* Right Side */}
+          <MotionWrapper variants={fadeRight}>
           <div className="grid gap-6 sm:grid-cols-2">
             {aboutFeatures.map((feature) => {
               const Icon = feature.icon;
@@ -65,6 +69,7 @@ export default function About() {
               );
             })}
           </div>
+          </MotionWrapper>
         </div>
       </Container>
     </Section>
