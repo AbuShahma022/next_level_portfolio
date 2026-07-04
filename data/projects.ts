@@ -23,10 +23,9 @@ export const projects = [
       "Recharts",
     ],
 
-    github:
-      "https://github.com/AbuShahma022/expense-tracker",
+    github: "https://github.com/AbuShahma022/expense-tracker",
 
-    live: "",
+    live: "https://expensewave.vercel.app/",
 
     features: [
       "Authentication",
@@ -48,17 +47,15 @@ export const projects = [
       "Recurring expenses",
       "PDF reports",
       "Multi-currency support",
-      "Ai-powered insights",
-      "Ai agent for financial advice",
+      "AI-powered insights",
+      "AI agent for financial advice",
     ],
   },
 
   {
     id: 2,
     slug: "inventra-ai",
-
     title: "Inventra AI",
-
     status: "Completed",
 
     image: "/inventraai.png",
@@ -78,7 +75,7 @@ export const projects = [
     github:
       "https://github.com/AbuShahma022/Inventory-management-system",
 
-    live: "",
+    live: "https://inventraai.vercel.app/",
 
     features: [
       "Inventory Management",
@@ -105,11 +102,8 @@ export const projects = [
 
   {
     id: 3,
-
     slug: "coming-soon",
-
     title: "Coming Soon",
-
     status: "In Progress",
 
     image: "/coming-soon.jpg",
