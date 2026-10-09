@@ -1,15 +1,172 @@
+
 export const projects = [
   {
     id: 1,
+    slug: "taskflow-project-management-saas",
+    title: "TaskFlow – Project Management SaaS",
+    status: "Completed",
+    image: "/taskflow.png",
+    shortDescription:
+      "A full-stack project management SaaS that helps organizations collaborate, manage teams, organize projects, and track tasks through sprint-based workflows. Features multi-organization support, role-based permissions, secure authentication, activity tracking, and subscription billing with Stripe.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query",
+      "Axios",
+      "React Hook Form",
+      "Zod",
+      "Node.js",
+      "Express.js",
+      "Prisma ORM",
+      "PostgreSQL",
+      "JWT",
+      "Redis",
+      "Stripe",
+      "Google OAuth",
+    ],
+    github: "https://github.com/AbuShahma022/TaskFlow-frontend",
+    live: "https://task-flowmanage.vercel.app",
+    features: [
+      "Secure authentication with JWT access and refresh tokens",
+      "Google OAuth authentication",
+      "Role-based access control for platform administrators, organization managers, and members",
+      "Multi-organization workspace management",
+      "Organization invitations with accept, reject, and cancellation workflows",
+      "Team creation and membership management",
+      "Project creation, updates, archiving, and member management",
+      "Sprint management with start, completion, and archive workflows",
+      "Task management with status, priority, and assignment workflows",
+      "Activity logs for tracking important workspace actions",
+      "FREE and PRO subscription management",
+      "Stripe Checkout integration and payment history",
+      "Admin dashboard for user management and account status control",
+      "Protected routes and organization-level access control",
+      "Search, filtering, sorting, and pagination",
+      "Responsive dashboard for desktop and mobile devices",
+    ],
+    challenges: [
+      "Designed multi-tenant access control to isolate organization data and enforce resource-level permissions.",
+      "Implemented JWT authentication with HTTP-only cookies and automatic access-token refresh.",
+      "Structured the backend into modular feature-based modules using TypeScript, Express.js, Prisma, and PostgreSQL.",
+      "Implemented organization invitations, project membership validation, and role-specific business rules.",
+      "Built sprint and task workflows with validation for status transitions and sprint completion.",
+      "Integrated Stripe Checkout and payment verification to manage subscription purchases.",
+      "Used TanStack Query to manage server state, caching, loading states, and API data synchronization.",
+      "Used database transactions for operations that require multiple related database changes.",
+    ],
+    improvements: [
+      "Add real-time notifications for invitations, task assignments, and project updates.",
+      "Implement file attachments for tasks and projects.",
+      "Add advanced project analytics and productivity reports.",
+      "Expand automated testing for authentication, permissions, and critical business workflows.",
+    ],
+  },
+
+  {
+    id: 2,
+    slug: "fixitnow-home-service-marketplace",
+    title: "FixItNow – Home Service Marketplace",
+    status: "Completed",
+    image: "/fixitnow.png",
+    shortDescription:
+      "A full-stack home service marketplace connecting customers with skilled technicians. Users can book services, manage appointments, make secure payments, and review technicians, while technicians and administrators manage their respective workflows.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query",
+      "Axios",
+      "React Hook Form",
+      "Zod",
+      "Node.js",
+      "Express.js",
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "Stripe",
+    ],
+    github: "https://github.com/AbuShahma022/fixitnow_frontend",
+    live: "https://fixitnow-frontend-jade.vercel.app",
+    features: [
+      "Role-based authentication for customers, technicians, and administrators",
+      "Secure authentication using JWT and HTTP-only cookies",
+      "Automatic access token refresh using Axios interceptors",
+      "Browse service categories and available technicians",
+      "Book technicians and manage booking history",
+      "Secure checkout and payment history",
+      "Submit reviews and ratings for technicians",
+      "Technician profile and service management",
+      "Technician availability scheduling",
+      "Booking acceptance, rejection, and status management",
+      "Service request submission and management",
+      "Admin dashboard for users, categories, services, bookings, and payments",
+      "Responsive UI for desktop and mobile devices",
+    ],
+    challenges: [
+      "Implemented HTTP-only cookie authentication with automatic access token refresh and Axios request retries.",
+      "Organized customer, technician, and admin experiences with role-specific dashboards and protected routes.",
+      "Integrated booking management with checkout and payment verification to support the service booking lifecycle.",
+      "Used TanStack Query to manage API requests, caching, loading states, and data updates across the application.",
+    ],
+    improvements: [
+      "Add real-time booking notifications",
+      "Expand analytics and reporting for administrators",
+    ],
+  },
+
+  {
+    id: 3,
+    slug: "inventra-ai",
+    title: "Inventra AI",
+    status: "Completed",
+    image: "/inventraai.png",
+    shortDescription:
+      "AI-powered inventory management system with analytics, reports and business assistant.",
+    technologies: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "LangChain",
+      "Tailwind CSS",
+    ],
+    github:
+      "https://github.com/AbuShahma022/Inventory-management-system",
+    live: "https://inventraai.vercel.app/",
+    features: [
+      "Inventory Management",
+      "Dashboard Analytics",
+      "Customer Management",
+      "Supplier Management",
+      "CSV Export",
+      "AI Assistant",
+      "Sales Reports",
+    ],
+    challenges: [
+      "Integrating AI with business workflows.",
+      "Generating intelligent reports.",
+      "Managing large dashboard datasets.",
+    ],
+    improvements: [
+      "Barcode Scanner",
+      "Invoice Generation",
+      "Role Management",
+    ],
+  },
+
+  {
+    id: 4,
     slug: "expense-wave",
     title: "Expense Wave",
     status: "Completed",
-
     image: "/expensewave.png",
-
     shortDescription:
       "A modern personal expense tracker with budgeting, analytics, authentication and responsive dashboard.",
-
     technologies: [
       "Next.js",
       "TypeScript",
@@ -22,11 +179,8 @@ export const projects = [
       "JWT",
       "Recharts",
     ],
-
     github: "https://github.com/AbuShahma022/expense-tracker",
-
     live: "https://expensewave.vercel.app/",
-
     features: [
       "Authentication",
       "OTP Verification",
@@ -36,13 +190,11 @@ export const projects = [
       "Dark Mode",
       "Responsive Design",
     ],
-
     challenges: [
       "Building new feature ideas.",
       "Creating reusable dashboard analytics.",
       "Managing complex Redux state.",
     ],
-
     improvements: [
       "Recurring expenses",
       "PDF reports",
@@ -53,74 +205,18 @@ export const projects = [
   },
 
   {
-    id: 2,
-    slug: "inventra-ai",
-    title: "Inventra AI",
-    status: "Completed",
-
-    image: "/inventraai.png",
-
-    shortDescription:
-      "AI-powered inventory management system with analytics, reports and business assistant.",
-
-    technologies: [
-      "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "LangChain",
-      "Tailwind CSS",
-    ],
-
-    github:
-      "https://github.com/AbuShahma022/Inventory-management-system",
-
-    live: "https://inventraai.vercel.app/",
-
-    features: [
-      "Inventory Management",
-      "Dashboard Analytics",
-      "Customer Management",
-      "Supplier Management",
-      "CSV Export",
-      "AI Assistant",
-      "Sales Reports",
-    ],
-
-    challenges: [
-      "Integrating AI with business workflows.",
-      "Generating intelligent reports.",
-      "Managing large dashboard datasets.",
-    ],
-
-    improvements: [
-      "Barcode Scanner",
-      "Invoice Generation",
-      "Role Management",
-    ],
-  },
-
-  {
-    id: 3,
+    id: 5,
     slug: "coming-soon",
     title: "Coming Soon",
     status: "In Progress",
-
     image: "/coming-soon.jpg",
-
     shortDescription:
       "A new premium full-stack application is currently under development.",
-
     technologies: [],
-
     github: "",
-
     live: "",
-
     features: [],
-
     challenges: [],
-
     improvements: [],
   },
 ];
