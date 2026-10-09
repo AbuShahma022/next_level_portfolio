@@ -1,17 +1,12 @@
-import Image from "next/image";
-import {
- 
-  ExternalLink,
-  ArrowRight,
-} from "lucide-react";
 
+"use client";
+
+import Image from "next/image";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 interface ProjectCardProps {
@@ -25,9 +20,7 @@ interface ProjectCardProps {
     github: string;
     live: string;
   };
-
   reverse?: boolean;
-
   onOpen: () => void;
 }
 
@@ -39,24 +32,24 @@ export default function ProjectCard({
   const isComingSoon = project.status === "In Progress";
 
   return (
-    <Card className="overflow-hidden rounded-3xl border-border/50 transition-all duration-300 hover:border-primary/30 hover:shadow-xl">
+    <Card className="w-full min-w-0 overflow-hidden rounded-2xl border-border/50 transition-all duration-300 hover:border-primary/30 hover:shadow-xl sm:rounded-3xl">
       <CardContent className="p-0">
         <div
-          className={`grid items-center gap-10 lg:grid-cols-2 ${
+          className={`grid min-w-0 grid-cols-1 items-center gap-0 lg:grid-cols-2 lg:gap-8 ${
             reverse ? "lg:[&>*:first-child]:order-2" : ""
           }`}
         >
-          {/* Image */}
-          <div className="relative h-[320px] overflow-hidden">
+          {/* Project Image */}
+          <div className="relative aspect-16/10 w-full min-w-0 overflow-hidden sm:aspect-video lg:aspect-auto lg:h-90">
             <Image
               src={project.image}
               alt={project.title}
-              sizes="(max-width: 768px) 100vw, 50vw"
               fill
-              className="object-cover transition duration-500 hover:scale-105"
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              className="object-cover transition-transform duration-500 hover:scale-105"
             />
 
-            <div className="absolute right-4 top-4">
+            <div className="absolute right-3 top-3 sm:right-4 sm:top-4">
               <Badge
                 variant={isComingSoon ? "secondary" : "default"}
               >
@@ -65,49 +58,64 @@ export default function ProjectCard({
             </div>
           </div>
 
-          {/* Content */}
-          <div className="p-8">
-            <h3 className="text-3xl font-bold">
+          {/* Project Content */}
+          <div className="min-w-0 p-4 sm:p-6 lg:p-8">
+            <h3 className="wrap-break-word text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
               {project.title}
             </h3>
 
-            <p className="mt-5 leading-8 text-muted-foreground">
+            <p className="mt-3 wrap-break-word text-sm leading-7 text-muted-foreground sm:mt-5 sm:text-base">
               {project.shortDescription}
             </p>
 
-            {/* Tech */}
-            <div className="mt-6 flex flex-wrap gap-2">
+            {/* Technologies */}
+            <div className="mt-4 flex flex-wrap gap-2 sm:mt-6">
               {project.technologies.map((tech) => (
                 <Badge
                   key={tech}
                   variant="outline"
+                  className="max-w-full wrap-break-word text-xs sm:text-sm"
                 >
                   {tech}
                 </Badge>
               ))}
             </div>
 
-            {/* Buttons */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            {/* Action Buttons */}
+            <div className="mt-6 flex flex-wrap items-center gap-2 sm:mt-8 sm:gap-3">
               {!isComingSoon && (
                 <>
-                  <Button asChild variant="outline">
-                    <a
-                      href={project.github}
-                      target="_blank"
+                  {project.github && (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="sm:h-10 sm:px-4"
                     >
-                      <FaGithub className="mr-2 h-4 w-4" />
-                      GitHub
-                    </a>
-                  </Button>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaGithub className="mr-2 size-4" />
+                        GitHub
+                      </a>
+                    </Button>
+                  )}
 
                   {project.live && (
-                    <Button asChild variant="outline">
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="sm:h-10 sm:px-4"
+                    >
                       <a
                         href={project.live}
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <ExternalLink className="mr-2 h-4 w-4" />
+                        <ExternalLink className="mr-2 size-4" />
                         Live Demo
                       </a>
                     </Button>
@@ -115,12 +123,13 @@ export default function ProjectCard({
                 </>
               )}
 
-              <Button onClick={onOpen}>
-                {isComingSoon
-                  ? "View Preview"
-                  : "View Details"}
-
-                <ArrowRight className="ml-2 h-4 w-4" />
+              <Button
+                size="sm"
+                onClick={onOpen}
+                className="max-w-full sm:h-10 sm:px-4"
+              >
+                {isComingSoon ? "View Preview" : "View Details"}
+                <ArrowRight className="ml-2 size-4 shrink-0" />
               </Button>
             </div>
           </div>
