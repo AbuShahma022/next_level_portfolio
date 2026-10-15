@@ -75,7 +75,7 @@ export default function Hero() {
 
                 <Button variant="ghost" size="icon" asChild>
                   <Link
-                    href="https://www.linkedin.com/in/md-abu-shahma-536861225?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    href="https://www.linkedin.com/in/md-abu-shahma?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                     target="_blank"
                     aria-label="LinkedIn"
                   >
