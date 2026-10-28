@@ -1,7 +1,71 @@
 
 export const projects = [
+  
+{
+  id: 1,
+  slug: "fixitnow-ai-powered-home-service-marketplace",
+  title: "FixItNow AI – AI-Powered Home Service Marketplace",
+  status: "Completed",
+  image: "/fixitnow.png",
+  shortDescription:
+    "An AI-powered full-stack home service marketplace connecting customers with skilled technicians. Built with Next.js, Node.js, PostgreSQL, and LangChain, the platform supports service booking, appointment management, secure payments, technician reviews, and role-based workflows.",
+  technologies: [
+    "Next.js 16",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "TanStack Query",
+    "Axios",
+    "React Hook Form",
+    "Zod",
+    "Node.js",
+    "Express.js",
+    "Prisma ORM",
+    "PostgreSQL",
+    "JWT Authentication",
+    "Stripe",
+    "LangChain",
+  ],
+  github: "https://github.com/AbuShahma022/fixitnow_frontend",
+  live: "https://fixitnow-frontend-jade.vercel.app",
+  features: [
+    "AI-Powered Home Service Assistance",
+    "AI-Assisted Service Discovery",
+    "Role-Based Authentication for Customers, Technicians, and Administrators",
+    "Secure JWT Authentication with HTTP-Only Cookies",
+    "Automatic Access Token Refresh with Axios Interceptors",
+    "Browse Service Categories and Available Technicians",
+    "Book Technicians and Manage Booking History",
+    "Secure Stripe Checkout and Payment History",
+    "Submit Technician Reviews and Ratings",
+    "Manage Technician Profiles and Offered Services",
+    "Manage Technician Availability Schedules",
+    "Accept, Decline, and Update Booking Status",
+    "Submit and Manage Service Requests",
+    "Admin Dashboard for Users, Categories, Services, Bookings, and Payments",
+    "Responsive Desktop and Mobile Interface",
+  ],
+  challenges: [
+    "Implemented HTTP-only cookie authentication with automatic access token refresh and Axios request retries.",
+    "Organized customer, technician, and admin experiences with role-specific dashboards and protected routes.",
+    "Integrated booking management with Stripe checkout and payment verification.",
+    "Used TanStack Query for API requests, caching, loading states, and data synchronization.",
+    "Integrated LangChain to support AI-powered functionality within the home service marketplace.",
+  ],
+  improvements: [
+    "Add real-time booking notifications",
+    "Expand AI-assisted service recommendations",
+    "Improve administrator analytics and reporting",
+  ],
+},
+
+
+
+
+
   {
-    id: 1,
+    id: 2,
     slug: "taskflow-project-management-saas",
     title: "TaskFlow – Project Management SaaS",
     status: "Completed",
@@ -65,59 +129,7 @@ export const projects = [
     ],
   },
 
-  {
-    id: 2,
-    slug: "fixitnow-home-service-marketplace",
-    title: "FixItNow – Home Service Marketplace",
-    status: "Completed",
-    image: "/fixitnow.png",
-    shortDescription:
-      "A full-stack home service marketplace connecting customers with skilled technicians. Users can book services, manage appointments, make secure payments, and review technicians, while technicians and administrators manage their respective workflows.",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "TanStack Query",
-      "Axios",
-      "React Hook Form",
-      "Zod",
-      "Node.js",
-      "Express.js",
-      "Prisma",
-      "PostgreSQL",
-      "JWT",
-      "Stripe",
-    ],
-    github: "https://github.com/AbuShahma022/fixitnow_frontend",
-    live: "https://fixitnow-frontend-jade.vercel.app",
-    features: [
-      "Role-based authentication for customers, technicians, and administrators",
-      "Secure authentication using JWT and HTTP-only cookies",
-      "Automatic access token refresh using Axios interceptors",
-      "Browse service categories and available technicians",
-      "Book technicians and manage booking history",
-      "Secure checkout and payment history",
-      "Submit reviews and ratings for technicians",
-      "Technician profile and service management",
-      "Technician availability scheduling",
-      "Booking acceptance, rejection, and status management",
-      "Service request submission and management",
-      "Admin dashboard for users, categories, services, bookings, and payments",
-      "Responsive UI for desktop and mobile devices",
-    ],
-    challenges: [
-      "Implemented HTTP-only cookie authentication with automatic access token refresh and Axios request retries.",
-      "Organized customer, technician, and admin experiences with role-specific dashboards and protected routes.",
-      "Integrated booking management with checkout and payment verification to support the service booking lifecycle.",
-      "Used TanStack Query to manage API requests, caching, loading states, and data updates across the application.",
-    ],
-    improvements: [
-      "Add real-time booking notifications",
-      "Expand analytics and reporting for administrators",
-    ],
-  },
+
 
   {
     id: 3,

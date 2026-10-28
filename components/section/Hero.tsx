@@ -47,12 +47,13 @@ export default function Hero() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Button size="lg" asChild>
                   <a
-                    href="/Md_Abu_Shahma_Full_Stack_Developer_Resume.pdf"
-                    download
-                    aria-label="Download Resume"
+                    href="https://drive.google.com/file/d/1xIGjPmPTgGewHv-3TKVItoG3TacUrJaN/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View Resume on Google Drive"
                   >
                     <ArrowDownToLine className="mr-2 h-5 w-5" />
-                    Download Resume
+                    View Resume
                   </a>
                 </Button>
 
