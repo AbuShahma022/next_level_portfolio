@@ -47,7 +47,7 @@ export default function Hero() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
                 <Button size="lg" asChild>
                   <a
-                    href="https://drive.google.com/file/d/1xIGjPmPTgGewHv-3TKVItoG3TacUrJaN/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1JZ_VfmESE-TtgygEqOc-etslY6c8L_yy/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="View Resume on Google Drive"
